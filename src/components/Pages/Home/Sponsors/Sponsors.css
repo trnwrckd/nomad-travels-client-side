@@ -1,0 +1,27 @@
+.sponsors{
+    background-color: #E4FFD6;
+    background-color: #feffd6;
+ 
+}
+
+.col img { 
+    height: 150px;
+    width: 150px;
+}
+
+/* overriding slick theme css */
+.slick-prev, .slick-next{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #d48c93;
+}
+.slick-prev::before, .slick-next::before{
+    color: white;
+}
+.slick-prev:hover , .slick-next:hover{
+    background-color: #9260d4;
+}
+.slick-prev:hover:before, .slick-next:hover:before{
+    color: white;
+}

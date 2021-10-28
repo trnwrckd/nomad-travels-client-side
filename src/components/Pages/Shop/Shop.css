@@ -1,0 +1,26 @@
+.sub-nav-container{
+    background-color: rgb(235, 231, 231);
+    font-weight: 500;
+}
+
+.sub-nav{
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0;
+}
+.sub-nav li{
+    display: inline;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px 30px;
+    margin: 0px 5px;
+}
+.sub-nav li:hover {
+    background-color: rgb(255, 255, 255);
+}
+.highlight{
+    background-color: rgb(179, 179, 179);
+}

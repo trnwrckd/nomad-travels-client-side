@@ -1,0 +1,17 @@
+.register-bg{
+    background-color: bisque;
+}
+
+.register{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.redirect{
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.redirect:hover{
+    color: navy;
+}

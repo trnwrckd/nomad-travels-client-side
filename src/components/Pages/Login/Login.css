@@ -1,0 +1,18 @@
+.login-bg{
+    background-color: #BDD9FF;
+    min-height: 80vh;
+}
+
+.login{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.redirect{
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.redirect:hover{
+    color: navy;
+}

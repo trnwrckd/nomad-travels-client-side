@@ -1,0 +1,35 @@
+.custom-nav{
+    font-size: 1.5rem;
+    background: linear-gradient(45deg , rgb(255, 246, 205) , rgb(255, 255, 176) ,rgb(196, 255, 211));
+    background: #fafafa;
+    margin-bottom: 65px;
+}
+.logo-text{
+    font-size: 1.5rem;
+    margin-left: 10px;
+    font-weight: 500;
+}
+.navbar-collapse {
+   padding-left:0;
+}
+.navbar-brand{
+    margin-right: 0px;
+}
+.common{
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 12px ;
+    text-decoration: none;
+}
+.active{
+    color: rgb(0, 0, 0);
+    color: white;
+    background-color: #9CADAB;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: #37746a;
+}
+

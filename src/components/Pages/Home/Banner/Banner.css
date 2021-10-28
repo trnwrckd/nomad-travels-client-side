@@ -1,0 +1,16 @@
+.banner{
+    /* background-color: #F9DF84; */
+    background-image: url('banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center center;
+    min-height: 80vh;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .banner{
+        height: 50vh;
+    }
+    
+}

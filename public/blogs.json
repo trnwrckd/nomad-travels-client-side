@@ -1,0 +1,26 @@
+[
+    {
+        "blogID": 1, 
+        "title" : "This Relentless Pandemic Can Tax Your Mental Health. Here’s How to Cope",
+        "author": "John Doe",
+        "blogImage" : "./images/blog/blog-1.png",
+        "details" : "Remember those brief, blissful weeks at the beginning of the summer? Vaccination rates were rising, COVID-19 infections were dropping and mask mandates... ",
+        "date" : "Sep 13"
+    },
+    {
+        "blogID": 2, 
+        "title" : "COVID-19 and the Flu: Know the symptoms",
+        "author": "John Doe",
+        "blogImage" : "./images/blog/blog-2.png",
+        "details" : "COVID-19 is still here and, unfortunately, flu season is also on its way. It’s not possible to definitively predict what will happen in the weeks and months... ",
+        "date" : "Sep 10"
+    },
+    {
+        "blogID": 3, 
+        "title" : "Keeping Kids Healthy Going Back to School",
+        "author": "John Doe",
+        "blogImage" : "./images/blog/blog-3.png",
+        "details" : "Your child is all packed and ready to go! Pencils? ✅ Notebooks? ✅ Backpack? ✅ Water bottle? ✅ Health? Check?? As a parent, you want to do everything in... ",
+        "date" : "Sep 01"
+    }
+]

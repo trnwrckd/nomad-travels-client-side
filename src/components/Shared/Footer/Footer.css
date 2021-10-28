@@ -1,0 +1,33 @@
+.footer{
+    background: #bebebe;
+    color: black;
+    position: absolute;
+    width: 100%;
+}
+
+/* footer links */
+.footer-link{
+    cursor: pointer;
+    letter-spacing: .5px;
+    transition: all .5s;
+    margin: 2px 10px;
+}
+.footer-link:hover{
+    animation: fadeIn; 
+    animation-duration: .8s;
+}
+/* social icons */
+.footer-social{
+    font-size: 1rem;
+}
+.footer-social i{
+    cursor: pointer;
+    padding: 0px 5px;
+    transition: all .5s;
+    font-size: 1.3rem;
+}
+.footer-social i:hover{
+    text-shadow: 0px 0px 15px #ffffff;
+    animation: fadeIn; 
+    animation-duration: .8s;
+}
