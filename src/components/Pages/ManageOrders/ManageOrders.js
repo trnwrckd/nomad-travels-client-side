@@ -2,7 +2,6 @@ import './ManageOrders.css';
 
 import React, { useEffect, useState } from 'react';
 import Order from '../../Shared/Order/Order';
-import { Handler } from 'leaflet';
 
 const ManageOrders = () => {
 
@@ -11,15 +10,16 @@ const ManageOrders = () => {
     const [order, setOrder] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/`)
+        fetch(`https://enigmatic-caverns-80998.herokuapp.com/orders/`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [order]);
 
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
+
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://enigmatic-caverns-80998.herokuapp.com/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -39,7 +39,7 @@ const ManageOrders = () => {
         const updatedOrder = { ...order, 'orderStatus': 'confirmed' };
         setOrder(updatedOrder);
 
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://enigmatic-caverns-80998.herokuapp.com/orders/${id}`;
 
         fetch(url, {
             method: 'PUT',

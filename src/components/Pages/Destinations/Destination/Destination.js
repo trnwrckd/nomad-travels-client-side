@@ -4,7 +4,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 const Service = (props) => {
-    const { _id , destinationName, image, description } = props.destination;
+    const { _id , destinationName, destinationLocation , costPerPerson ,  image, description } = props.destination;
     const history = useHistory();
 
     const redirectToDetails = (destinationID) => {
@@ -21,7 +21,9 @@ const Service = (props) => {
                 </div>
                 <div className="d-flex flex-column justify-content-center ps-4">
                     <h4>{destinationName}</h4>
+                    <p className="mt-2 mb-4">{destinationLocation}</p>
                     <p className="mt-2 mb-4">{description}</p>
+                    <p className="mt-2 mb-4">{costPerPerson}</p>
                 <div>
                     <button className="btn-generic btn-blue" onClick={ ()=>{redirectToDetails(_id)}}>
                         Book Tour

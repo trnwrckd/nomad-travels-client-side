@@ -33,10 +33,24 @@ const AddService = () => {
                     {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
                 </div>
 
+                {/* destination location */}
+                <div className="form-floating mb-2">
+                    <input className="form-control px-5" type="text" placeholder="Destination Location" id="dest-loc" {...register("destinationLocation")} />
+                    <label htmlFor="dest-loc">Destination Location</label>
+                    {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
+                </div>
+
                 {/* destination description */}
                 <div className="form-floating mb-2">
                     <input className="form-control px-5" type="text" placeholder="Description" id="description" {...register("description")} />
-                    <label htmlFor="email">Description</label>
+                    <label htmlFor="description">Description</label>
+                    {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
+                </div>
+
+                {/* destination description */}
+                <div className="form-floating mb-2">
+                    <input className="form-control px-5" type="number" placeholder="Cost/person ($)" id="cost" {...register("costPerPerson")} />
+                    <label htmlFor="cost">Cost/person ($)</label>
                     {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
                 </div>
 

@@ -1,6 +1,5 @@
 import './PlaceOrder.css';
 import React, { useEffect, useState } from 'react';
-
 import axios from 'axios';
 import { useForm } from 'react-hook-form'; 
 import { useAuth } from '../../../hooks/useAuth';
@@ -9,30 +8,51 @@ import { useParams } from 'react-router';
 const PlaceOrder = () => {
 
     const { user } = useAuth();
+    // datepicker state
 
     const { handleSubmit, register, formState: { errors } ,reset} = useForm();
 
     const {id } = useParams();
     
     const [destination, setDestination] = useState([]);
+    const [persons, setPersons] = useState(1);
+
+    const handleChangePersons = (add,e) => {
+        e.preventDefault();
+        let newPersons;
+        if (!add && persons <= 1) {
+            newPersons = 0;
+        }
+        else if (add) {
+            newPersons = persons + 1;
+        }
+        else {
+            newPersons = persons - 1;
+        }
+        setPersons(newPersons)
+    }
+
     
     useEffect(() => {
-        fetch(`http://localhost:5000/destinations/${id}`)
+        fetch(`https://enigmatic-caverns-80998.herokuapp.com/destinations/${id}`)
             .then(res => res.json()).then(data => setDestination(data));
     }, [id]);
 
     const onSubmit = (data) => {
         data.name = user.displayName;
         data.email = user.email;
-        data.orderID = id;
+        data.location = destination.destinationName;
         data.uid = user.uid;
+        data.persons = persons;
         data.orderStatus = "pending";
+        console.log(data)
 
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://enigmatic-caverns-80998.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
                     reset();
+                    setPersons(1);
                 }
             })
     }
@@ -65,13 +85,20 @@ const PlaceOrder = () => {
 
                 {/* Date */}
                 <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="text" placeholder="Date" id="date" {...register("date", { required: "Date is required" })} />
-                    <label htmlFor="date">Date</label>
-                    {errors.date && <p className="text-danger fw-bold m-0"> {errors.date.message}</p>}
+                    
+                    <input type="date" {...register("date")} />
                 </div>
-                <input type="hidden" {...register("orderID")} />
+
+                <div>
+                    <button onClick={(e)=>handleChangePersons(0,e)}>-</button>
+                    <span>{persons}</span>
+                    <button onClick={(e)=>handleChangePersons(1,e)}>+</button>
+                </div>
+
+                <input type="hidden" {...register("location")} />
                 <input type="hidden" {...register("orderStatus")} />
                 <input type="hidden" {...register("uid")} />
+                <input type="hidden" {...register("persons")} />
 
                 <div><button className="btn-generic  btn-blue">
                         Confirm
