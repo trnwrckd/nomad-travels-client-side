@@ -1,4 +1,4 @@
-# NomadTravels , A tour booking platform
+# NomadTravels™ , A tour booking platform
 
 ## Live Website URL - https://nomad-travels-504b4.firebaseapp.com/
 

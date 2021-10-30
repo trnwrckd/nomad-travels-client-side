@@ -64,7 +64,7 @@ const Register = () => {
                         </button>
                     </div>
 
-                    <p className="redirect pt-3 fw-bold" onClick={redirectToLogin}>Already have an account?</p>
+                    <p className="redirect-register pt-3 fw-bold" onClick={redirectToLogin}>Already have an account?</p>
 
                 </div>
             </div>
