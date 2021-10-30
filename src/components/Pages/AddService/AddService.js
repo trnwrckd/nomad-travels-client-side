@@ -44,7 +44,7 @@ const AddService = () => {
 
                     {/* destination description */}
                     <div className="form-floating mb-2">
-                        <input className="form-control px-5" type="text" placeholder="Description" id="description" {...register("description" , {required: "Some description is required."})} />
+                        <input className="form-control px-5" data-toggle="tooltip" data-placement="left" title="Should be atleast 500 characters"  type="text" placeholder="Description" id="description" {...register("description" , {required: "Some description is required."})} />
                         <label htmlFor="description">Description</label>
                         {errors.description && <p className="text-danger fw-bold m-0">{errors.description.message}</p>}
                     </div>
@@ -58,14 +58,14 @@ const AddService = () => {
                         
                     {/* Rating*/}
                     <div className="form-floating mb-2">
-                        <input className="form-control px-5" type="number" step="0.01" placeholder="Rating" id="rating" {...register("rating" , {required: "Rating is required"})} />
+                        <input className="form-control px-5" data-toggle="tooltip" data-placement="left" title="0.0 to 5.0" type="number" step="0.01" placeholder="Rating" id="rating" {...register("rating" , {required: "Rating is required"})} />
                         <label htmlFor="rating">Rating</label>
                         {errors.rating && <p className="text-danger fw-bold m-0">{errors.rating.message}</p>}
                     </div>
 
                     {/* image url */}
                     <div className="form-floating mb-2">
-                        <input className="form-control px-5" type="text" placeholder="Image URL" id="img" {...register("image", { required: "Image URL is required" })} />
+                        <input className="form-control px-5" data-toggle="tooltip" data-placement="left" title="Minimum resolution 600*600" type="text" placeholder="Image URL" id="img" {...register("image", { required: "Image URL is required" })} />
                         <label htmlFor="img">Image URL</label>
                         {errors.image && <p className="text-danger fw-bold m-0"> {errors.image.message}</p>}
                     </div>

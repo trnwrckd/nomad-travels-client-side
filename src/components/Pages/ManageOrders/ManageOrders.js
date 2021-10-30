@@ -101,20 +101,21 @@ const ManageOrders = () => {
                         <div className="container">
                             <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
                             {
-                                orders.map(order => <Order key={order._id} order={order}>
-                                    <div className="d-flex justify-content-evenly">
-                                        <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}> Delete
-                                            <i className="fas fa-trash-alt ms-1"></i>
-                                        </button>
-                                        {
-                                            order.orderStatus === "Approved" || 
-                                        <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> 
-                                            Update status
-                                            <i className="far fa-check-circle ms-1"></i>
-                                        </button> 
-                                        }
-                                    </div>
-                                </Order>)
+                                    orders.map(order =>
+                                        <Order key={order._id} order={order}>
+                                            <div className="d-flex justify-content-evenly">
+                                                <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}> Delete
+                                                    <i className="fas fa-trash-alt ms-1"></i>
+                                                </button>
+                                                {
+                                                    order.orderStatus === "Approved" || 
+                                                <button className="btn btn-success ms-2" onClick={()=>{handleUpdateStatus(order._id)}}> 
+                                                    Update status
+                                                    <i className="far fa-check-circle ms-1"></i>
+                                                </button> 
+                                                }
+                                            </div>
+                                         </Order>)
                             }
                         </div>
                         </div>

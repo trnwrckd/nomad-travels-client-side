@@ -131,7 +131,7 @@ const PlaceOrder = () => {
                             <input type="hidden" {...register("uid")} />
                             <input type="hidden" {...register("persons")} />
 
-                            <div className="mt-3"><button className="btn-generic  btn-blue">
+                            <div className="mt-3"><button className="btn-generic btn-blue">
                                     Proceed
                                 </button>
                             </div>

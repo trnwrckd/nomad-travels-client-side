@@ -19,7 +19,7 @@ const Service = (props) => {
         <div className="col">
             <div className="h-100 d-flex align-items-center flex-column destination-card">
                 <div>
-                    <img src={image} alt="" className="img-fluid dest-img" height="250px"/>
+                    <img src={image} alt="" className="dest-img img-fluid"/>
                 </div>
                 <div className="d-flex flex-column justify-content-between bg-highlight p-3">
                     <div className="d-flex justify-content-between align-items-center">

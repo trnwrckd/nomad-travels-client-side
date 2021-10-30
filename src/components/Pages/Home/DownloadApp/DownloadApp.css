@@ -1,0 +1,40 @@
+.download-app-container{
+    background: url('download-app-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(59, 59, 59);
+    background-blend-mode: lighten;
+    background-size: cover;
+    
+    color: #faffaf;
+    text-shadow: 
+    1px 0px 5px rgb(0, 0, 0),
+    -1px 0px 5px rgb(12, 12, 12)
+    ;
+}
+.app-img{
+    height: 400px;
+    width: 400px;
+}
+.promo-text-container{
+    background-color: rgba(37, 37, 37, 0.281);
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+}
+.ad-img{
+    height: 35px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+    
+    .download-app-container{
+        /* background: blue; */
+        /* background-position: right top; */
+    }
+    .app-img{
+        height: 280px;
+        width: 280px;
+    }
+    
+}

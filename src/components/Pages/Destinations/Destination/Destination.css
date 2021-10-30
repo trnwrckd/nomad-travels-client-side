@@ -17,13 +17,15 @@
 .destination-card:hover .bg-highlight{
     background-color: #fff8c7;
 }
+
 .dest-img{
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
     transition: transform .8s;
-    min-height: 250px;
-    /* width: 450px; */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 250px;
+    min-width: 600px;
 }
+
 .dest-img:hover{
     transform: scale(1.1);
 }
