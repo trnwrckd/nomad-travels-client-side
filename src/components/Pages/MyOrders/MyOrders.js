@@ -84,7 +84,7 @@ const MyOrders = () => {
                             <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
                             {
                                 orders.map(order => <Order key={order._id} order={order}>
-                                    <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>
+                                    <button className="btn-generic btn-red" onClick={() => handleDeleteOrder(order._id)}>
                                         Delete
                                         <i className="fas fa-trash-alt ms-1"></i>
                                     </button>

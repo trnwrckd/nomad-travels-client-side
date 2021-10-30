@@ -40,7 +40,7 @@ const Service = (props) => {
                         </Rating>
                     </div>
                 <div>
-                    <button className="btn-generic btn-blue" onClick={ ()=>{redirectToDetails(_id)}}>
+                    <button className="btn-generic btn-orange" onClick={ ()=>{redirectToDetails(_id)}}>
                         Book Tour
                     </button>
                 </div>

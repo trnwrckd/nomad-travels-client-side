@@ -7,7 +7,7 @@ import playStore from './app-images/play-store.png'
 const DownloadApp = () => {
     return (
         <div className="download-app-container pt-5">
-            <div className="container d-flex justify-content-center">
+            <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 g-3 pt-5">
 
                     <div className="col order-md-2 d-flex flex-column justify-content-center">

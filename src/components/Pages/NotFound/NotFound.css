@@ -3,10 +3,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position:  bottom center;
-    background-color: black;
-    background-blend-mode: screen;
+    background-color: rgb(65, 65, 65);
+    background-blend-mode: lighten;
     min-height: 90vh;
     color: white;
+    text-shadow: 
+        1px 1px 10px rgb(0, 0, 0),
+        -1px 1px  10px black
+    ;
     display: flex;
     flex-direction: column;
     justify-content: center;

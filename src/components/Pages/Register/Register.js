@@ -52,19 +52,19 @@ const Register = () => {
                                 <p className="text-danger fw-bold">{error}</p>
                         }
                         <div>
-                            <button className="btn-generic btn-red">
+                            <button className="btn-generic">
                                 Register <i className="fas fa-sign-in-alt ms-1"></i>
                             </button>
                         </div>
                     </form>
                     <div className="mt-3">
-                        <button className="btn-generic btn-blue" onClick={handleGoogleSignin}>
+                        <button className="btn-generic btn-orange" onClick={handleGoogleSignin}>
                             <i className="fab fa-google me-1"></i>
                             Register with Google
                         </button>
                     </div>
 
-                    <p className="redirect pt-3" onClick={redirectToLogin}>Already have an account?</p>
+                    <p className="redirect pt-3 fw-bold" onClick={redirectToLogin}>Already have an account?</p>
 
                 </div>
             </div>
