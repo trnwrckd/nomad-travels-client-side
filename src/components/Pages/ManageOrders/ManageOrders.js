@@ -3,6 +3,10 @@ import './ManageOrders.css';
 import React, { useEffect, useState } from 'react';
 import Order from '../../Shared/Order/Order';
 import Loader from '../../Shared/Loader/Loader';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 const ManageOrders = () => {
 
@@ -20,24 +24,38 @@ const ManageOrders = () => {
             });
     }, [order]);
 
+    // notification for update and delete
+    const delNotify = () => toast("Order Deleted.");
+    const updateNotify = () => toast("Order Approved!");
+
     // delete order
     const handleDeleteOrder = (id) => {
-        const proceed = window.confirm('Are you sure, you want to delete?');
-
-        if (proceed) {
-            const url = `https://enigmatic-caverns-80998.herokuapp.com/orders/${id}`;
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do this.',
+            buttons: [
+            {
+                label: 'Yes',
+                    onClick: () => {
+                    const url = `https://enigmatic-caverns-80998.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        delNotify();
                         const remainingOrders = orders.filter(order => order._id !== id);
                         setOrders(remainingOrders);
                     }
                 });
-        }
+                }
+            },
+            {
+                label: 'No',
+            }
+            ]
+        });
     }
 
     // update order status
@@ -58,7 +76,7 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Update Successful');
+                    updateNotify();
                     setOrder(data);
                 }
             })
@@ -76,22 +94,28 @@ const ManageOrders = () => {
 
         else {
             return (
-                <div className ="container mt-nav py-5 my-5">
-                    <h1>Manage Orders</h1>
-                    <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
-                        {
-                            orders.map(order => <Order key={order._id} order={order}>
-                                <div className="d-flex justify-content-evenly">
-                                    <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}> Delete
-                                        <i className="fas fa-trash-alt ms-1"></i>
-                                    </button>
-                                    <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> 
-                                        Update status
-                                        <i className="far fa-check-circle ms-1"></i>
-                                    </button>
-                                </div>
-                            </Order>)
-                        }
+                <div className="common-bg">
+                    <div className ="container mt-nav py-5 mt-5">
+                        <h1>Manage Orders</h1>
+                        <ToastContainer/>
+                        <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
+                            {
+                                orders.map(order => <Order key={order._id} order={order}>
+                                    <div className="d-flex justify-content-evenly">
+                                        <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}> Delete
+                                            <i className="fas fa-trash-alt ms-1"></i>
+                                        </button>
+                                        {
+                                            order.orderStatus === "Approved" || 
+                                        <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> 
+                                            Update status
+                                            <i className="far fa-check-circle ms-1"></i>
+                                        </button> 
+                                        }
+                                    </div>
+                                </Order>)
+                            }
+                        </div>
                     </div>
                 </div>
             );

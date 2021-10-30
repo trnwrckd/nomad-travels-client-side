@@ -27,10 +27,10 @@ const Register = () => {
         <div className="register-bg py-5 mt-nav">
             <div className="container d-flex flex-column flex-md-row justify-content-around align-items-center">
 
-                <div><img src="./images/register.png" alt="" className="img-fluid" height="400px" width="400px"/></div>
+                <div></div>
 
                 <div className="d-flex flex-column register px-3 py-4">
-                    <h1>Register</h1>
+                    <h1 className="mb-4">Register</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="form-group">
                         <div className="form-floating mb-2">
                             <input className="form-control px-5" type="text" placeholder="Name" id="name" {...register("name", { required: "Name is required" })} />

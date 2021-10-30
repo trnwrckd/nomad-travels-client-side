@@ -29,7 +29,7 @@ const Login = () => {
         <div className="login-bg py-5 mt-nav">
             <div className="container d-flex flex-column flex-md-row justify-content-around align-items-center">
                 <div className="d-flex flex-column justify-content-center login px-3 py-4">
-                    <h1>Login</h1>
+                    <h1 className="mb-4">Login</h1>
                     <div>
                         <form onSubmit={handleSubmit(onSubmit)} className="form-group">
                             <div className="form-floating mb-2">
@@ -59,9 +59,6 @@ const Login = () => {
                     <p className="redirect pt-3" onClick={redirectToRegister}>Don't have an account?</p>
                 </div>
 
-                <div>
-                    <img src="./images/login.png" alt="" className="img-fluid" height="400px" width="400px" />
-                </div>
 
             </div>
 

@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '../../../hooks/useAuth';
 import { useParams } from 'react-router';
 import Rating from 'react-rating';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PlaceOrder = () => {
 
@@ -38,6 +40,8 @@ const PlaceOrder = () => {
             .then(res => res.json()).then(data => setDestination(data));
     }, [id]);
 
+    const notify = () => toast("Order placed Successfully!");
+
     const onSubmit = (data) => {
         data.name = user.displayName;
         data.email = user.email;
@@ -45,12 +49,11 @@ const PlaceOrder = () => {
         data.uid = user.uid;
         data.persons = persons;
         data.orderStatus = "Pending";
-        console.log(data)
 
         axios.post('https://enigmatic-caverns-80998.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    notify();
                     reset();
                     setPersons(1);
                 }
@@ -68,11 +71,11 @@ const PlaceOrder = () => {
                                 <div className="dest-info p-3">
                                     <h2> {destination.destinationName}</h2>
                                     <h4>
-                                        <i class="fas fa-map-marker-alt me-2"></i>
+                                        <i className="fas fa-map-marker-alt me-2"></i>
                                         {destination.destinationLocation}
                                     </h4>
                                     <h4>
-                                        <i class="fas fa-dollar-sign me-2"></i>
+                                        <i className="fas fa-dollar-sign me-2"></i>
                                         {destination.costPerPerson} per person
                                     </h4>
                                     <h4>
@@ -91,19 +94,17 @@ const PlaceOrder = () => {
                     <div className="col order-md-1">
                         <h2>Book Tour</h2>
                         <form onSubmit={handleSubmit(onSubmit)} className="form-group">
-
+                            <ToastContainer/>
                             {/* name */}
                             <div className="form-floating mb-2">
                                 <input className="form-control px-5" defaultValue={user.displayName} type="text" placeholder="Name" id="name" {...register("name")} />
                                 <label htmlFor="name">Name</label>
-                                {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
                             </div>
 
                             {/* email */}
                             <div className="form-floating mb-2">
                                 <input className="form-control px-5" defaultValue={user.email} type="email" placeholder="Email" id="email" {...register("email")} />
                                 <label htmlFor="email">Email</label>
-                                {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
                             </div>
 
                             {/* address */}

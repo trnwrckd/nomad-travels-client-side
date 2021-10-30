@@ -1,12 +1,16 @@
 .login-bg{
-    background-color: #ffebfa;
-    min-height: 80vh;
+    background: url('login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center center;
+    min-height: 90vh;
 }
 
 .login{
-    background-color: #fff;
-    box-shadow: 2px 2px rgb(124, 124, 124);
+    background-color: rgba(255, 255, 255, 0.582);
+    box-shadow: 2px 2px 10px rgb(124, 124, 124);
     border-radius: 10px;
+    backdrop-filter: blur(2px);
 }
 
 .redirect{

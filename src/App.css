@@ -15,6 +15,10 @@
   color: #FFAC19;
 }
 
+.common-bg{
+  background-color: rgb(231, 255, 247);
+}
+
 .btn-generic{
     background-color: rgb(70, 70, 70);
     color: white;

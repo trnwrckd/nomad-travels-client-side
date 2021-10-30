@@ -1,6 +1,12 @@
 .not-found{
-    background-color: #FEFCFC;
-    min-height: 70vh;
+    background: url('not-found-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  bottom center;
+    background-color: black;
+    background-blend-mode: screen;
+    min-height: 90vh;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
