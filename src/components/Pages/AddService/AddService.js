@@ -11,7 +11,7 @@ const AddService = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        axios.post('http://localhost:5000/destinations', data)
+        axios.post('https://enigmatic-caverns-80998.herokuapp.com/destinations', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -21,7 +21,7 @@ const AddService = () => {
     }
 
     return (
-        <div className="mt-nav container">
+        <div className="mt-nav container py-5">
             <h2> Add Service</h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="form-group">

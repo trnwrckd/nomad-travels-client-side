@@ -7,7 +7,6 @@ import Order from '../../Shared/Order/Order';
 const MyOrders = () => {
 
     const { user } = useAuth();
-    console.log(user.uid);
 
     const [orders, setOrders] = useState([]);
 
@@ -35,19 +34,28 @@ const MyOrders = () => {
                 });
         }
     }
-
-    return (
-        <div className="mt-nav container">
-            <h2>This is my orders</h2>
-            <div>
-                {
-                    orders.map(order => <Order key={order._id} order={order}>
-                         <button className="btn-danger" onClick={()=> handleDeleteOrder(order._id)}> Delete</button>
-                    </Order>)
-                }
+    console.log(orders);
+    if (orders.length === 0) {
+        return (
+            <div className="mt-nav container py-5 my-5">
+                 <h2 className="py-5 my-5">No Current Orders</h2>
             </div>
-        </div>
-    );
+        );
+    }
+    else {
+        return (
+            <div className="mt-nav container py-5 my-5">
+                <h2>{user.displayName}, Here are all your orders.</h2>
+                <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
+                    {
+                        orders.map(order => <Order key={order._id} order={order}>
+                            <button className="btn-danger" onClick={()=> handleDeleteOrder(order._id)}> Delete</button>
+                        </Order>)
+                    }
+                </div>
+            </div>
+        );
+    }
 };
 
 export default MyOrders;

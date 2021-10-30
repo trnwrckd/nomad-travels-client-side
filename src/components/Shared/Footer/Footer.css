@@ -1,6 +1,6 @@
 .footer{
-    background: #bebebe;
-    color: black;
+    background: #4e4e4e;
+    color: white;
     position: absolute;
     width: 100%;
 }
@@ -14,7 +14,7 @@
 }
 .footer-link:hover{
     animation: fadeIn; 
-    animation-duration: .8s;
+    animation-duration: .1s;
 }
 /* social icons */
 .footer-social{
@@ -27,7 +27,7 @@
     font-size: 1.3rem;
 }
 .footer-social i:hover{
-    text-shadow: 0px 0px 15px #ffffff;
+    /* text-shadow: 0px 0px 15px #1d1d1d; */
     animation: fadeIn; 
     animation-duration: .8s;
 }

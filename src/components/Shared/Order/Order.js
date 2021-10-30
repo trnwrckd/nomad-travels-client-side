@@ -6,14 +6,25 @@ const Order = (props) =>{
     const {address , location, name, date , orderStatus , persons}= props.order;
 
     return (
-        <div className="bg-dark m-3 text-light">
-            <h3>{address}</h3>
-            <h3>{name}</h3>
-            <h3>{location}</h3>
-            <h3>{date}</h3>
-            <h3>{orderStatus}</h3>
-            <h3>{persons}</h3>
-            <div>{props.children}</div>
+        <div className="col">
+            <div className="order-container">
+                <h5>Destination: {location}</h5>
+                <div className="d-flex justify-content-between align-items-center">
+                    <h5> Name: {name}</h5>
+                    <h6> Location:{address}</h6>
+                </div>
+                <div className="d-flex justify-content-around">
+                    <h6>Flight Date: {date}</h6>
+                    {
+                        orderStatus === "Pending" ?
+                            <h6>Order Status: <span  className="text-danger">{orderStatus}</span></h6>
+                            :
+                            <h6 className="text-success">Order Status: <span className="text-success">{orderStatus}</span></h6>
+                    }
+                </div>
+                <h6>Tickets Booked: {persons}</h6>
+                <div>{props.children}</div>
+            </div>
         </div>
     );
 };

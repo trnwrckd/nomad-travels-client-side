@@ -1,10 +1,11 @@
 .login-bg{
-    background-color: #BDD9FF;
+    background-color: #ffebfa;
     min-height: 80vh;
 }
 
 .login{
-    background-color: white;
+    background-color: #fff;
+    box-shadow: 2px 2px rgb(124, 124, 124);
     border-radius: 10px;
 }
 

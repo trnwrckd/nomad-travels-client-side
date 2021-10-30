@@ -1,0 +1,10 @@
+.order-container{
+    padding: 25px 15px;
+    border-radius: 10px;
+    background-color: rgb(231, 231, 231);
+    transition: all 0.5s;
+}
+
+.order-container:hover{
+    background-color: white;
+}

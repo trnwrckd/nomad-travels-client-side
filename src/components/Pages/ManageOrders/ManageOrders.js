@@ -19,7 +19,7 @@ const ManageOrders = () => {
         const proceed = window.confirm('Are you sure, you want to delete?');
 
         if (proceed) {
-            const url = `https://enigmatic-caverns-80998.herokuapp.com/${id}`;
+            const url = `https://enigmatic-caverns-80998.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -57,19 +57,31 @@ const ManageOrders = () => {
             })
     }
 
-    return (
-        <div className =" container mt-nav">
-            <h1>Manage Orders</h1>
-            <div>
-                {
-                    orders.map(order => <Order key={order._id} order={order}>
-                        <button className="btn-danger" onClick={()=> handleDeleteOrder(order._id)}> Delete</button>
-                        <button className="btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> Update status</button>
-                    </Order>)
-                }
+    if (orders.length === 0) {
+        return (
+            <div className="mt-nav container py-5 my-5">
+                 <h2 className="py-5 my-5">No Current Orders</h2>
             </div>
-        </div>
-    );
+        );
+    }
+
+    else {
+        return (
+            <div className ="container mt-nav py-5 my-5">
+                <h1>Manage Orders</h1>
+                <div className="py-2 my-2 row row-cols-1 row-cols-md-2 g-5">
+                    {
+                        orders.map(order => <Order key={order._id} order={order}>
+                            <div className="d-flex justify-content-evenly">
+                                <button className="btn btn-danger" onClick={()=> handleDeleteOrder(order._id)}> Delete</button>
+                                <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> Update status</button>
+                            </div>
+                        </Order>)
+                    }
+                </div>
+            </div>
+        );
+    }
 };
 
 export default ManageOrders;

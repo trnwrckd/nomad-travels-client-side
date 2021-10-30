@@ -30,7 +30,9 @@ const Footer = () => {
                                 <i className="fab fa-instagram"></i>
                                 <i className="fab fa-youtube"></i>
                             </div>
-                            <p><small>© 2021 Nomad Travels™. All rights reserved.</small></p>
+                            <p><small>©
+                            <span className="ms-2 logo-nomad">Nomad</span>
+                                <span className ="logo-travels">Travels™</span></small></p>
                         </div>  
                     </div>
                 </div>

@@ -8,7 +8,6 @@ import { useParams } from 'react-router';
 const PlaceOrder = () => {
 
     const { user } = useAuth();
-    // datepicker state
 
     const { handleSubmit, register, formState: { errors } ,reset} = useForm();
 
@@ -44,7 +43,7 @@ const PlaceOrder = () => {
         data.location = destination.destinationName;
         data.uid = user.uid;
         data.persons = persons;
-        data.orderStatus = "pending";
+        data.orderStatus = "Pending";
         console.log(data)
 
         axios.post('https://enigmatic-caverns-80998.herokuapp.com/orders', data)
@@ -58,54 +57,84 @@ const PlaceOrder = () => {
     }
 
     return (
-        <div className="container py-5 mt-nav">
-            <h4>{destination.destinationName}</h4>
-            <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+        <div className=" placeorder-bg py-5">
+            <div className="container py-5 mt-nav">
+                <div className="row row-cols-1 row-cols-md-2 g-5">
+                    <div className="col order-md-2">
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div className="img-parent">
+                                <img src={destination.image} alt="" className="img-fluid placeorder-img" />
+                                <div className="dest-info p-3">
+                                    <h2> {destination.destinationName}</h2>
+                                    <h4>
+                                        <i class="fas fa-map-marker-alt me-3"></i>
+                                        {destination.destinationLocation}
+                                    </h4>
+                                    <h4>
+                                        <i class="fas fa-dollar-sign me-3"></i>
+                                        {destination.costPerPerson} per person
+                                    </h4>
+                                </div>
+                            </div>
 
-                {/* name */}
-                <div className="form-floating mb-2">
-                    <input className="form-control px-5" defaultValue={user.displayName} type="text" placeholder="Name" id="name" {...register("name")} />
-                    <label htmlFor="name">Name</label>
-                    {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
+                        </div>
+                    </div>
+                    <div className="col order-md-1">
+                        <h2>Book Tour</h2>
+                        <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+
+                            {/* name */}
+                            <div className="form-floating mb-2">
+                                <input className="form-control px-5" defaultValue={user.displayName} type="text" placeholder="Name" id="name" {...register("name")} />
+                                <label htmlFor="name">Name</label>
+                                {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
+                            </div>
+
+                            {/* email */}
+                            <div className="form-floating mb-2">
+                                <input className="form-control px-5" defaultValue={user.email} type="email" placeholder="Email" id="email" {...register("email")} />
+                                <label htmlFor="email">Email</label>
+                                {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
+                            </div>
+
+                            {/* address */}
+                            <div className="form-floating mb-2">
+                                <input className="form-control px-5" type="text" placeholder="Address" id="address" {...register("address", { required: "Address is required" })} />
+                                <label htmlFor="address">Address</label>
+                                {errors.address && <p className="text-danger fw-bold m-0"> {errors.address.message}</p>}
+                            </div>
+
+                            {/* Date */}
+                            <div className="mb-2 d-flex justify-content-evenly">
+                                <input type="date" {...register("date")} />
+
+                                <div className="d-flex align-items-center">
+                                    <button id="inc-btn" onClick={(e)=>handleChangePersons(0,e)}>-</button>
+                                    <span id="persons">{persons}</span>
+                                    <button id="dec-btn" onClick={(e)=>handleChangePersons(1,e)}>+</button>
+                                </div>
+
+                            </div>
+
+
+                            <input type="hidden" {...register("location")} />
+                            <input type="hidden" {...register("orderStatus")} />
+                            <input type="hidden" {...register("uid")} />
+                            <input type="hidden" {...register("persons")} />
+
+                            <div className="mt-3"><button className="btn-generic  btn-blue">
+                                    Proceed
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>         
                 </div>
-
-                {/* email */}
-                <div className="form-floating mb-2">
-                    <input className="form-control px-5" defaultValue={user.email} type="email" placeholder="Email" id="email" {...register("email")} />
-                    <label htmlFor="email">Email</label>
-                    {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
+                <div className="pt-3 px-5">
+                    <h3>{destination.destinationName}</h3>
+                    <p>{destination.description}</p>
                 </div>
-
-                {/* address */}
-                <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="text" placeholder="Address" id="address" {...register("address", { required: "Address is required" })} />
-                    <label htmlFor="address">Address</label>
-                    {errors.address && <p className="text-danger fw-bold m-0"> {errors.address.message}</p>}
-                </div>
-
-                {/* Date */}
-                <div className="form-floating mb-2">
-                    
-                    <input type="date" {...register("date")} />
-                </div>
-
-                <div>
-                    <button onClick={(e)=>handleChangePersons(0,e)}>-</button>
-                    <span>{persons}</span>
-                    <button onClick={(e)=>handleChangePersons(1,e)}>+</button>
-                </div>
-
-                <input type="hidden" {...register("location")} />
-                <input type="hidden" {...register("orderStatus")} />
-                <input type="hidden" {...register("uid")} />
-                <input type="hidden" {...register("persons")} />
-
-                <div><button className="btn-generic  btn-blue">
-                        Confirm
-                    </button>
-                </div>
-
-            </form>
+            </div>
         </div>
     );
 };

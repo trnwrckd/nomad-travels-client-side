@@ -9,7 +9,6 @@ import Footer from './components/Shared/Footer/Footer';
 import Login from './components/Pages/Login/Login';
 import Register from './components/Pages/Register/Register';
 
-import Contact from './components/Pages/Contact/Contact';
 
 import PlaceOrder from './components/Pages/PlaceOrder/PlaceOrder';
 import MyOrders from './components/Pages/MyOrders/MyOrders';
@@ -31,9 +30,9 @@ function App() {
               <Home></Home>      
             </Route>
 
-            <Route path='/placeorder/:id'>
+            <PrivateRoute path='/placeorder/:id'>
               <PlaceOrder></PlaceOrder>
-            </Route>
+            </PrivateRoute>
 
             <Route path='/login'>
               <Login></Login>
@@ -43,20 +42,16 @@ function App() {
               <Register></Register>
             </Route>
 
-            <Route path = '/myorders'>
+            <PrivateRoute path = '/myorders'>
               <MyOrders></MyOrders>
-            </Route>
+            </PrivateRoute>
 
-            <Route path = '/manageorders'>
+            <PrivateRoute path = '/manageorders'>
               <ManageOrders></ManageOrders>
-            </Route>
+            </PrivateRoute>
 
-            <Route path = '/addservice'>
+            <PrivateRoute path = '/addservice'>
               <AddService></AddService>
-            </Route>
-
-            <PrivateRoute path = '/contact'>
-              <Contact></Contact>
             </PrivateRoute>
 
             <Route path="*">

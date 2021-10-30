@@ -13,19 +13,24 @@ const Banner = () => {
     }
 
     return (
-        <div className="banner mt-nav d-flex align-items-center text-start">
-            <div className='container d-flex flex-column flex-lg-row justify-content-center align-items-center'>
-                <div>
-                    <h1 className="mb-3">Hello Wayfarer!</h1>
-                    <p className="fs-5 mb-3"> NomadTravels™  is an international travel planner and organizer that's always there for you. <br /> Contact us to get away from everything. <br /> Our services are just a click away.</p>
-                    {
-                        !user.email &&
-                        <button onClick={redirectToRegister} className="btn-generic">
-                            Login<i className="fas fa-sign-in-alt ms-1"></i>
-                        </button>
-                    }
+        <div className="banner mt-nav d-flex align-items-center justify-content-center">
+            <div className='container'>
+                <div className="my-5">
+                    <div className="my-5 py-5 my-lg-0 transparent-bg">
+                        <h1 className="mb-3 display-3">
+                            <span className="logo-nomad">Nomad</span>
+                            <span className="logo-travels">Travels</span>
+                        </h1>
+                        <h1 className="mb-3 heading-1">Hello Wayfarer!</h1>
+                        <h6 className="mb-3 lead"> NomadTravels™  is an international travel planner and organizer based on Dhaka,Bangladesh. <br /> Contact us to get away from everything. <br /> Our services are just a click away.</h6>
+                        {
+                            !user.email &&
+                            <button onClick={redirectToRegister} className="btn-generic">
+                                Login<i className="fas fa-sign-in-alt ms-1"></i>
+                            </button>
+                        }
+                    </div>
                 </div>
-                {/* <div><img src="./images/banner.jpg" className="img-fluid" alt=""/></div> */}
             </div>
         </div>
     );

@@ -4,7 +4,15 @@
 }
 
 .mt-nav{
-  margin-top: 65px;
+  margin-top: 60px;
+  padding-top: 15px;
+}
+
+.logo-nomad{
+  color: cyan;
+}
+.logo-travels{
+  color: #FFAC19;
 }
 
 .btn-generic{
@@ -49,12 +57,12 @@
 }
 
 .btn-logout{
-  background-color: rgb(194, 0, 0);
+  background: rgb(255, 255, 255);
   font-size: 1.1rem;
   padding: 5px 10px;
-  border-radius: 15px;
+  border-radius: 75%;
   border: none;
-  color: white;
+  color: rgb(8, 8, 8);
 
   position: relative;
   z-index: 1;
@@ -62,31 +70,32 @@
   box-shadow: 0px 0px 5px rgb(148, 148, 148);
 }
 .btn-logout:hover{
-  color: black;
+  color: white;
 }
 .btn-logout:before , .btn-logout::after{
   position: absolute;
   content: '';
   z-index: -1;
-  background-color: white;
+  background: #141212;
   width: 100%; 
   height: 100%;
-  transition: all .8s;
-  top: 0;
+  transition: all .4s;
+  left: 0;
+  right: 0;
 }
 .btn-logout:before{
-  left: -100%;
+  top: -100%;
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .btn-logout::after{
-  right: -100%;
-  border-top-right-radius: 15px;
+  bottom: -100%;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .btn-logout:hover:before{
-  left: 0;
+  top: 0;
 }
 .btn-logout:hover:after{
-  right: 0;
+  bottom: 0;
 }
