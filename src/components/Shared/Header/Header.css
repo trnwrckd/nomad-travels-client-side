@@ -46,8 +46,8 @@
     opacity: 0%;
     top: 0;
     left: 0;
-    border-bottom: .5px solid white;
-    transition: all .5s;
+    border-bottom: 1px solid white;
+    transition: all 1s;
 }
 .common:hover:before{
     opacity: 100;
@@ -55,8 +55,7 @@
 
 
 .active{
-    color: white;
-    background-color: #333333;
+    color: rgb(136, 134, 241);
 }
 a{
     color: rgb(255, 255, 255);

@@ -139,7 +139,7 @@ const PlaceOrder = () => {
                         </form>
                     </div>         
                 </div>
-                <div className="pt-3 px-5">
+                <div className="pt-3">
                     <h3>{destination.destinationName}</h3>
                     <p>{destination.description}</p>
                 </div>

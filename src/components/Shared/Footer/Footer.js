@@ -31,8 +31,8 @@ const Footer = () => {
                                 <i className="fab fa-youtube"></i>
                             </div>
                             <p><small>©
-                            <span className="ms-2 logo-nomad">Nomad</span>
-                                <span className ="logo-travels">Travels™</span></small></p>
+                            <span className="ms-2" data-col="cyan">Nomad</span>
+                                <span data-col="orange">Travels™</span></small></p>
                         </div>  
                     </div>
                 </div>

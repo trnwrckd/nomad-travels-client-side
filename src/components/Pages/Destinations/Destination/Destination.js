@@ -23,12 +23,15 @@ const Service = (props) => {
                 </div>
                 <div className="d-flex flex-column justify-content-between bg-highlight p-3">
                     <div className="d-flex justify-content-between align-items-center">
-                        <h4 className="py-0">{destinationName}</h4>
-                        <h5 className="mt-2">{destinationLocation}</h5>
+                        <h4 className="py-0" data-col="blue">{destinationName}</h4>
+                        <h5 className="mt-2" data-col="dark-green">
+                            <i className="fas fa-map-marker-alt me-2"></i>
+                            {destinationLocation}
+                        </h5>
                     </div>
                     <p className="mt-2">{description.substring(0,150)}...</p>
-                    <div className="d-flex justify-content-between">
-                        <p className="mt-2">${costPerPerson} per person</p>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <p className="mt-2"><span className="icon-color fw-bold">${costPerPerson}</span> per person</p>
                         <Rating
                                 initialRating={rating}
                                 emptySymbol="far fa-star icon-color"

@@ -31,8 +31,8 @@ const ManageOrders = () => {
     // delete order
     const handleDeleteOrder = (id) => {
         confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
+            title: 'Confirm Deletion',
+            message: 'Are you sure?',
             buttons: [
             {
                 label: 'Yes',

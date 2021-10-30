@@ -31,8 +31,8 @@ const MyOrders = () => {
     const handleDeleteOrder = (id) => {
          
         confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
+            title: 'Confirm Deletion',
+            message: 'Are you sure?',
             buttons: [
             {
                 label: 'Yes',
@@ -67,8 +67,8 @@ const MyOrders = () => {
     else {
         if (orders.length === 0) {
             return (
-                <div className="common-bg">
-                    <div className="mt-nav container py-5 mt-5">
+                <div className="common-bg py-5">
+                    <div className="mt-nav container py-5">
                         <h2 className="py-5 my-5">No Current Orders</h2>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
     height: 100%;
 }
 .destination-card:hover .bg-highlight{
-    background-color: #D9E8D1;
+    background-color: #fff8c7;
 }
 .dest-img{
     transition: transform .8s;

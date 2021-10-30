@@ -19,7 +19,7 @@ const Order = (props) =>{
                         orderStatus === "Pending" ?
                             <h6>Order Status: <span  className="text-danger">{orderStatus}</span></h6>
                             :
-                            <h6 className="text-success">Order Status: <span className="text-success">{orderStatus}</span></h6>
+                            <h6>Order Status: <span className="text-success">{orderStatus}</span></h6>
                     }
                 </div>
                 <h6>Tickets Booked: {persons}</h6>

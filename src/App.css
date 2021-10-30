@@ -3,20 +3,42 @@
   padding-bottom: 100px;
 }
 
+/* margin for navbar */
 .mt-nav{
   margin-top: 60px;
   padding-top: 15px;
 }
 
-.logo-nomad{
+/* text colors */
+[data-col = "cyan"]{
   color: cyan;
 }
-.logo-travels{
+[data-col = "orange"]{
   color: #FFAC19;
 }
-
+[data-col = "green"]{
+  color: rgb(146, 255, 146);
+}
+[data-col = "red"]{
+  color: rgb(255, 146, 146);
+}
+[data-col = "yellow"]{
+  color: rgb(230, 255, 116);
+}
+[data-col = "blue"]{
+  color: rgb(52, 33, 161);
+}
+[data-col = "dark-green"]{
+  color: rgb(12, 129, 47);
+}
+[data-col]{
+  transition: color .5s;
+}
+[data-col]:hover{
+  color: inherit;
+}
 .common-bg{
-  background-color: rgb(231, 255, 247);
+  background-color: rgb(224, 217, 245);
 }
 
 .btn-generic{
@@ -63,15 +85,15 @@
 .btn-logout{
   background: rgb(255, 255, 255);
   font-size: 1.1rem;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: 75%;
   border: none;
   color: rgb(8, 8, 8);
-
+  
   position: relative;
   z-index: 1;
   overflow: hidden;
-  box-shadow: 0px 0px 2px rgb(99, 99, 99);
+  transition: all .6s;
 }
 .btn-logout:hover{
   color: white;
@@ -81,7 +103,8 @@
   content: '';
   z-index: -1;
   background: #141212;
-  width: 100%; 
+  background: rgb(255, 84, 72);
+  width: 110%; 
   height: 100%;
   transition: all .6s;
   left: 0;
@@ -105,6 +128,5 @@
 }
 
 .icon-color{
-  color: #FFAC19;
-  color: #ff1971;
+  color: #ff2c37;
 }
