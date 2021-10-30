@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form'; 
 import { useAuth } from '../../../hooks/useAuth';
 import { useParams } from 'react-router';
+import Rating from 'react-rating';
 
 const PlaceOrder = () => {
 
@@ -67,12 +68,20 @@ const PlaceOrder = () => {
                                 <div className="dest-info p-3">
                                     <h2> {destination.destinationName}</h2>
                                     <h4>
-                                        <i class="fas fa-map-marker-alt me-3"></i>
+                                        <i class="fas fa-map-marker-alt me-2"></i>
                                         {destination.destinationLocation}
                                     </h4>
                                     <h4>
-                                        <i class="fas fa-dollar-sign me-3"></i>
+                                        <i class="fas fa-dollar-sign me-2"></i>
                                         {destination.costPerPerson} per person
+                                    </h4>
+                                    <h4>
+                                        <Rating
+                                            initialRating={destination.rating}
+                                            emptySymbol="far fa-star icon-color"
+                                            fullSymbol="fas fa-star icon-color"
+                                            readonly>
+                                         </Rating>   
                                     </h4>
                                 </div>
                             </div>
@@ -106,7 +115,7 @@ const PlaceOrder = () => {
 
                             {/* Date */}
                             <div className="mb-2 d-flex justify-content-evenly">
-                                <input type="date" {...register("date")} />
+                                <input type="date" {...register("date" , {required: "Date is required"})} />
 
                                 <div className="d-flex align-items-center">
                                     <button id="inc-btn" onClick={(e)=>handleChangePersons(0,e)}>-</button>

@@ -73,8 +73,13 @@ const ManageOrders = () => {
                     {
                         orders.map(order => <Order key={order._id} order={order}>
                             <div className="d-flex justify-content-evenly">
-                                <button className="btn btn-danger" onClick={()=> handleDeleteOrder(order._id)}> Delete</button>
-                                <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> Update status</button>
+                                <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}> Delete
+                                    <i class="fas fa-trash-alt ms-1"></i>
+                                </button>
+                                <button className="btn btn-success" onClick={()=>{handleUpdateStatus(order._id)}}> 
+                                    Update status
+                                    <i class="far fa-check-circle ms-1"></i>
+                                </button>
                             </div>
                         </Order>)
                     }

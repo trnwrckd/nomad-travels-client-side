@@ -7,4 +7,5 @@
 
 .order-container:hover{
     background-color: white;
+    cursor: pointer;
 }

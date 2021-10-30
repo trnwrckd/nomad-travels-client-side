@@ -24,34 +24,42 @@ const AddService = () => {
         <div className="mt-nav container py-5">
             <h2> Add Service</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+            <div className="d-flex justify-content-center">
+                <form onSubmit={handleSubmit(onSubmit)} className="form-group">
 
                 {/* destination Name */}
                 <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="text" placeholder="Destination Name" id="dest-name" {...register("destinationName")} />
+                    <input className="form-control px-5" type="text" placeholder="Destination Name" id="dest-name" {...register("destinationName", { required: "Name is required" })} />
                     <label htmlFor="dest-name">Destination Name</label>
-                    {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
+                    {errors.destinationName && <p className="text-danger fw-bold m-0">{errors.destinationName.message}</p>}
                 </div>
 
                 {/* destination location */}
                 <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="text" placeholder="Destination Location" id="dest-loc" {...register("destinationLocation")} />
+                        <input className="form-control px-5" type="text" placeholder="Destination Location" id="dest-loc" {...register("destinationLocation", { required: "Location is required" })}  />
                     <label htmlFor="dest-loc">Destination Location</label>
-                    {/* {errors.name && <p className="text-danger fw-bold m-0">{errors.name.message}</p>} */}
+                    {errors.destinationLocation && <p className="text-danger fw-bold m-0">{errors.destinationLocation.message}</p>}
                 </div>
 
                 {/* destination description */}
                 <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="text" placeholder="Description" id="description" {...register("description")} />
+                    <input className="form-control px-5" type="text" placeholder="Description" id="description" {...register("description" , {required: "Some description is required."})} />
                     <label htmlFor="description">Description</label>
-                    {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
+                    {errors.description && <p className="text-danger fw-bold m-0">{errors.description.message}</p>}
                 </div>
 
-                {/* destination description */}
+                {/* cost per person*/}
                 <div className="form-floating mb-2">
-                    <input className="form-control px-5" type="number" placeholder="Cost/person ($)" id="cost" {...register("costPerPerson")} />
+                    <input className="form-control px-5" type="number" placeholder="Cost/person ($)" id="cost" {...register("costPerPerson" , {required: "Cost is required"})} />
                     <label htmlFor="cost">Cost/person ($)</label>
-                    {/* {errors.email && <p className="text-danger fw-bold m-0">{errors.email.message}</p>} */}
+                    {errors.costPerPerson && <p className="text-danger fw-bold m-0">{errors.costPerPerson.message}</p>}
+                </div>
+                    
+                {/* Rating*/}
+                <div className="form-floating mb-2">
+                    <input className="form-control px-5" type="number" step="0.01" placeholder="Rating" id="rating" {...register("rating" , {required: "Rating is required"})} />
+                    <label htmlFor="rating">Rating</label>
+                    {errors.rating && <p className="text-danger fw-bold m-0">{errors.rating.message}</p>}
                 </div>
 
                 {/* image url */}
@@ -67,6 +75,7 @@ const AddService = () => {
                 </div>
 
             </form>
+            </div>
 
 
         </div>
