@@ -4,10 +4,10 @@
 .img-parent{
     position:relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 .placeorder-img{
-    height: 300px;
-    width: 450px;
+    animation: pulse 5s infinite;
     border-radius: 10px;
     z-index: 1;
 }

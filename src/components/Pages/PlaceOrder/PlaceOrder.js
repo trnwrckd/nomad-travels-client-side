@@ -61,13 +61,13 @@ const PlaceOrder = () => {
     }
 
     return (
-        <div className=" placeorder-bg py-5">
-            <div className="container py-5 mt-nav">
+        <div className=" placeorder-bg py-5  mt-nav">
+            <div className="container p-5">
                 <div className="row row-cols-1 row-cols-md-2 g-5">
                     <div className="col order-md-2">
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="img-parent">
-                                <img src={destination.image} alt="" className="img-fluid placeorder-img" />
+                                <img src={destination.image} alt="" className="placeorder-img img-fluid " height="300px" width="450px"/>
                                 <div className="dest-info p-3">
                                     <h2> {destination.destinationName}</h2>
                                     <h4>
@@ -88,7 +88,6 @@ const PlaceOrder = () => {
                                     </h4>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div className="col order-md-1">
@@ -115,10 +114,10 @@ const PlaceOrder = () => {
                             </div>
 
                             {/* Date */}
-                            <div className="mb-2 d-flex justify-content-evenly">
+                            <div className="mb-2 d-flex flex-column flex-lg-row justify-content-evenly align-items-center">
                                 <input type="date" {...register("date" , {required: "Date is required"})} />
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center  mt-2 mt-lg-0">
                                     <button id="inc-btn" onClick={(e)=>handleChangePersons(0,e)}>-</button>
                                     <span id="persons">{persons}</span>
                                     <button id="dec-btn" onClick={(e)=>handleChangePersons(1,e)}>+</button>
