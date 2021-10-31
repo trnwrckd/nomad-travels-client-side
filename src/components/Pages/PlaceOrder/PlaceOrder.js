@@ -19,6 +19,7 @@ const PlaceOrder = () => {
     const [destination, setDestination] = useState([]);
     const [persons, setPersons] = useState(1);
 
+
     const handleChangePersons = (add,e) => {
         e.preventDefault();
         let newPersons;
@@ -115,8 +116,8 @@ const PlaceOrder = () => {
 
                             {/* Date */}
                             <div className="mb-2 d-flex flex-column flex-lg-row justify-content-evenly align-items-center">
-                                <input type="date" {...register("date" , {required: "Date is required"})} />
-
+                                <input type="date"  {...register("date", {
+                                    required: "Date is required"})} />
                                 <div className="d-flex align-items-center  mt-2 mt-lg-0">
                                     <button id="inc-btn" onClick={(e)=>handleChangePersons(0,e)}>-</button>
                                     <span id="persons">{persons}</span>

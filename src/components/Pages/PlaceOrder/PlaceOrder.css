@@ -41,14 +41,14 @@ input[type=date]{
     font-weight: 600;
 }
 #inc-btn{
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 #dec-btn{
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 #persons{
     background-color: rgb(233, 214, 233);
-    padding: 10px 15px;
+    padding: 10px 20px;
 }

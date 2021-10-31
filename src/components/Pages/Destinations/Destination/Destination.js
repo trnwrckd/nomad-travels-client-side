@@ -10,7 +10,6 @@ const Service = (props) => {
     const history = useHistory();
 
     const redirectToDetails = (destinationID) => {
-        console.log(destinationID);
         const url = `/placeorder/${destinationID}`;
         history.push(url);
     }
