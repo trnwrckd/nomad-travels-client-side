@@ -116,8 +116,14 @@ const PlaceOrder = () => {
 
                             {/* Date */}
                             <div className="mb-2 d-flex flex-column flex-lg-row justify-content-evenly align-items-center">
-                                <input type="date"  {...register("date", {
-                                    required: "Date is required"})} />
+                            <div className="form-floating mb-2">
+                                <input className="form-control px-5" type="date" placeholder="Date" id="date" {...register("date", { required: "Date is required" })} />
+                                <label htmlFor="date">Date</label>
+                                {errors.date && <p className="text-danger fw-bold m-0"> {errors.date.message}</p>}
+                            </div>
+                                {/* <input type="date"  {...register("date", {required: "Date is required"})} />
+                                {errors.date && <p className="text-danger fw-bold m-0"> {errors.date.message}</p>} */}
+                                    
                                 <div className="d-flex align-items-center  mt-2 mt-lg-0">
                                     <button id="inc-btn" onClick={(e)=>handleChangePersons(0,e)}>-</button>
                                     <span id="persons">{persons}</span>

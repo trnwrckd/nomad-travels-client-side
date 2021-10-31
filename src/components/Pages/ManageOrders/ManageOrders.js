@@ -110,7 +110,7 @@ const ManageOrders = () => {
                                                 {
                                                     order.orderStatus === "Approved" || 
                                                 <button className="btn-generic btn-green ms-2" onClick={()=>{handleUpdateStatus(order._id)}}> 
-                                                    Update status
+                                                    Confirm
                                                     <i className="far fa-check-circle ms-1"></i>
                                                 </button> 
                                                 }

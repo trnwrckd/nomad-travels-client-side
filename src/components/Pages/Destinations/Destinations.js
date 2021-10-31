@@ -13,7 +13,7 @@ const Services = () => {
     else {
         return (
             <div className="my-5">
-                <h1 className="pb-5">Most Popular Packages</h1>
+                <h1 className="pb-5 section-heading">Most Popular Packages</h1>
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
                         {

@@ -10,6 +10,12 @@
   padding-top: 15px;
 }
 
+/* text-style */
+.section-heading{
+  font-family: 'Comfortaa', cursive;
+  font-weight: 800;
+}
+
 /* text colors */
 [data-col = "cyan"]{
   color: cyan;
@@ -55,7 +61,7 @@
 }
 
 .common-bg{
-  background-color: rgb(224, 217, 245);
+  background-color: rgb(237, 231, 255);
 }
 
 .btn-banner{

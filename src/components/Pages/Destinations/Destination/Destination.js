@@ -30,7 +30,7 @@ const Service = (props) => {
                     </div>
                     <p className="mt-2">{description.substring(0,150)}...</p>
                     <div className="d-flex justify-content-between align-items-center">
-                        <p className="mt-2"><span className="icon-color fw-bold">${costPerPerson}</span> per person</p>
+                        <p className="mt-2"><span className="icon-color fw-bold fs-5">${costPerPerson}</span> per person</p>
                         <Rating
                                 initialRating={rating}
                                 emptySymbol="far fa-star icon-color"

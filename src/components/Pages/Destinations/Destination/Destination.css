@@ -7,7 +7,7 @@
 }
 .destination-card:hover{
     cursor: pointer;
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 .bg-highlight{
     transition: all .8s;
@@ -15,7 +15,7 @@
     height: 100%;
 }
 .destination-card:hover .bg-highlight{
-    background-color: #fff8c7;
+    background-color: #e8e7ff;
 }
 
 .dest-img{

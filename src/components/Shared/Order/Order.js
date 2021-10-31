@@ -12,7 +12,7 @@ const Order = (props) =>{
                         <h5>From {address} to {location}</h5>
                         <div className="d-flex flex-column flex-md-row justify-content-between align-items-between">
                             <h6> Name: {name}</h6>
-                            <h6 >Order Id: {_id}</h6>
+                            <h6 className="text-highlight">Order Id: {_id}</h6>
                         </div>
                         <div className="d-flex flex-column flex-md-row justify-content-between align-items-between">
                             <h6>Flight Date: {date}</h6>
