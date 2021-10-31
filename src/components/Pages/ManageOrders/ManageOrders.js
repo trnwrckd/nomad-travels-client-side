@@ -86,8 +86,10 @@ const ManageOrders = () => {
     else {
         if (orders.length === 0) {
             return (
-                <div className="mt-nav container py-5 mt-5">
-                    <h2 className="py-5 my-5">No Current Orders</h2>
+                <div className="common-bg py-5">
+                    <div className="mt-nav container py-5">
+                        <h2 className="py-5 my-5">No Current Orders</h2>
+                    </div>
                 </div>
             );
         }
