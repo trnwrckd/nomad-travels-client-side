@@ -6,14 +6,14 @@
 
 ### Users
 
-    * Check out and choose from a number of tour plans
-    * Easily book tours
-    * Check order status
-    * Delete orders
+- Check out and choose from a number of tour plans
+- Easily book tours
+- Check order status
+- Delete orders
 
 ### Admin
 
-    * Add new tour packages to database
-    * Access to complete database
-    * Update order status
-    * Delete orders
+- Add new tour packages to database
+- Access to complete database
+- Update order status
+- Delete orders
