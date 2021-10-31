@@ -2,19 +2,23 @@ import './AddService.css';
 
 import axios from 'axios';
 import React from 'react';
-import { useForm } from 'react-hook-form'; 
+import { useForm } from 'react-hook-form';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
 
     const { handleSubmit, register, formState: { errors }, reset } = useForm();
+
+    const notify = () => toast("Package added Successfully!");
     
     const onSubmit = (data) => {
-        console.log(data);
 
         axios.post('https://enigmatic-caverns-80998.herokuapp.com/destinations', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    notify();
                     reset();
                 }
             })
@@ -23,10 +27,11 @@ const AddService = () => {
     return (
         <div className="common-bg">
             <div className="mt-nav container py-5">
-                <h2> Add Service</h2>
+                <h2> Add Package</h2>
 
                 <div className="d-flex justify-content-center">
                     <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+                    <ToastContainer/>
 
                     {/* destination Name */}
                     <div className="form-floating mb-2">

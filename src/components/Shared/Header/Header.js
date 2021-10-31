@@ -41,7 +41,7 @@ const Header = () => {
                                                     <NavLink to="/manageorders"  className="common" activeClassName="active">Manage Orders</NavLink>
                                                 </li>
                                                 <li className = "nav-item mt-2 mb-lg-0">
-                                                    <NavLink to="/addservice"  className="common" activeClassName="active">Add a service</NavLink>
+                                                    <NavLink to="/addservice"  className="common" activeClassName="active">Add a package</NavLink>
                                                 </li>
                                             </ul>
                                         </li>
