@@ -10,7 +10,7 @@ const Newsletter = () => {
                 <h4 className="px-0 px-md-5 my-3 mx-3">Keep up with our latest news and events.
                     <br />
                     Subscribe to our newsletter.</h4>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center py-2">
                     <input type="email" className="form-control w-50" placeholder="Your Email.."/>
                     <button className="btn-generic ms-2">Submit</button>
                 </div>
