@@ -59,7 +59,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <ScrollToTop/>
+          </ScrollToTop>
         </Router>
         <Footer></Footer>
       </AuthProvider>
