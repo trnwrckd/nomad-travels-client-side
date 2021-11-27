@@ -117,7 +117,8 @@ const ManageOrders = () => {
                                                 </button> 
                                                 }
                                             </div>
-                                         </Order>)
+                                        </Order>
+                                    )
                             }
                         </div>
                         </div>

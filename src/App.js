@@ -8,7 +8,7 @@ import AuthProvider from './context/AuthProvider';
 import Footer from './components/Shared/Footer/Footer';
 import Login from './components/Pages/Login/Login';
 import Register from './components/Pages/Register/Register';
-
+import ScrollToTop from './components/Shared/ScrollToTop/ScrollToTop'
 
 import PlaceOrder from './components/Pages/PlaceOrder/PlaceOrder';
 import MyOrders from './components/Pages/MyOrders/MyOrders';
@@ -20,7 +20,8 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-            <Header></Header>
+          <ScrollToTop>
+             <Header></Header>
             <Switch>
             <Route exact path='/'>
               <Home></Home>            
@@ -58,6 +59,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <ScrollToTop/>
         </Router>
         <Footer></Footer>
       </AuthProvider>

@@ -57,7 +57,7 @@ const Reviews = () => {
 
     return (
         <div className="review-bg py-5">
-            <h1 className="mb-4 section-heading">What people are saying</h1>
+            <h1 className="mb-4 section-heading">What people are saying {reviews.length}</h1>
             <div className="container">
                 <Slider {...slickSettings} className="pt-4 mt-3">       
                     {

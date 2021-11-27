@@ -8,7 +8,7 @@ const Review = (props) => {
     const { name, image, content } = props.review;
 
     return (
-        <div className="review-container p-3 m-3">
+        <div className="review-container p-3 mt-3">
             <p className="px-3"> {content}</p>
             <div className="d-flex justify-content-center align-items-center">
                 <div><img src={image} className="img-circle" height="48px" alt=""/></div>
