@@ -1,19 +1,19 @@
 .newsletter-container{
     background-image: url('newsletter.webp');
     background-color: rgb(56, 56, 56);
-    background-blend-mode: overlay;
+    /* background-blend-mode: overlay; */
     min-height: 60vh;
 }
 .newsletter{
     padding: 25px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: rgb(240, 240, 240);
+    background-color: white;
     box-shadow: 0px 0px 10px black;
 }
 .newsletter-heading{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgb(175, 50, 0);
-    font-family: 'Architects Daughter', cursive;
     font-weight: bold;
 }

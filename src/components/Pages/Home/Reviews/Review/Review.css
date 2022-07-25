@@ -1,6 +1,6 @@
 .review-container{
     border-radius: 25px;
-    background-color: lightgrey;
+    background-color: rgb(255, 253, 218);
     position: relative;
 }
 .review-container:before{
@@ -13,7 +13,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     top: -60px;
-    color: rgb(70, 70, 70);
+    color: rgb(35, 14, 83);
     /* left: -20px; */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 120px;

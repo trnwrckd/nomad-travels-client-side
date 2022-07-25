@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
 .banner{
     background: url('banner.jpg');
     background-repeat: no-repeat;
@@ -11,25 +13,28 @@
     color: white;
     margin: 10px 0;
     text-shadow: 
-        0px 1px 4px rgb(0, 0, 0),
-        -1px 1px 4px rgb(0, 0, 0),
-        1px 1px 4px rgb(0, 0, 0),
-        0px -1px 4px rgb(0, 0, 0)
+        0px 1px 3px rgb(0, 0, 0),
+        /* -1px 1px 4px rgb(0, 0, 0),
+        1px 1px 4px rgb(0, 0, 0), */
+        0px -1px 3px rgb(0, 0, 0)
     ;
     padding: 10px 20px;
-    border-radius: 20px;
 }
 
-p .banner-text{
+.banner-text-container{
+    background-color: rgba(87, 87, 87, 0.26);
+    background: linear-gradient(180deg, transparent, rgba(7, 7, 7, 0.40), rgba(7, 7, 7, 0.15) );
 }
 
 .banner-text{
-    width: 75%;
-    font-family: 'Roboto' , 'sans-serif';
-    font-size: 26px;
+    width: 60%;
+    font-size: 1.5em;
     cursor: pointer;
-    letter-spacing: .10em;
+    /* letter-spacing: .10em; */
     line-height: 1.8em;
+    color: white;
+    font-family: 'Roboto' , 'sans-serif';
+    font-family: 'Roboto Slab', serif;
 }
 
 @media only screen and (max-width: 992px) {
@@ -38,7 +43,7 @@ p .banner-text{
     }
     .banner-text{
         width: 90%;
-        font-size: 24px;
+        font-size: 1.3em;
         letter-spacing: .10em;
         line-height: 1.6em;
     }
@@ -46,6 +51,6 @@ p .banner-text{
 }
 @media only screen and (max-width: 992px) {
     .banner-text{
-        font-size: 22px;
+        font-size: 1.2em;
     }
 }
