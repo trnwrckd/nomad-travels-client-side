@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { baseUrl } from '../utils/constants';
 
 export const useDestinations = () => {
-    const [destinations, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState([]);
 
-    const url = `https://enigmatic-caverns-80998.herokuapp.com/destinations`;
-    
-    useEffect(() => {
-        fetch(url)
-            .then(result => result.json())
-            .then(data => setDestinations(data))
-    }, [url]);
+  const url = `${baseUrl}/destinations`;
 
-    return [destinations, setDestinations];
+  useEffect(() => {
+    fetch(url)
+      .then(result => result.json())
+      .then(data => setDestinations(data));
+  }, [url]);
 
-}
+  return [destinations, setDestinations];
+};
